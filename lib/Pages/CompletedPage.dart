@@ -48,7 +48,6 @@ class _WipeCompletePageState extends State<WipeCompletePage> with SingleTickerPr
     final double avatarSize = 120;
 
     return Scaffold(
-      backgroundColor: _bg,
       body: SafeArea(
         child: Column(
           children: [
@@ -64,12 +63,6 @@ class _WipeCompletePageState extends State<WipeCompletePage> with SingleTickerPr
                     child: InkWell(
                       onTap: () => Navigator.of(context).maybePop(),
                       borderRadius: BorderRadius.circular(999),
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        alignment: Alignment.center,
-                        child: const Icon(Icons.arrow_back, color: Colors.grey),
-                      ),
                     ),
                   ),
                   const Spacer(),

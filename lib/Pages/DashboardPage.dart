@@ -55,25 +55,6 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Row(
                 children: [
                   // back icon (removed const because textColor is non-const)
-                  Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {
-                        Navigator.of(context).maybePop();
-                      },
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        alignment: Alignment.center,
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 24,
-                          color: textColor,
-                        ),
-                      ),
-                    ),
-                  ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
@@ -119,7 +100,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 children: [
                                   Text(
                                     'Drive Selection',
-                                    style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w700),
+                                    style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w700,color: Colors.black),
                                   ),
                                   const SizedBox(height: 6),
                                   Text(
@@ -190,7 +171,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Wipe Settings', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w700)),
+                                  Text('Wipe Settings', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w700,color: Colors.black)),
                                   const SizedBox(height: 6),
                                   Text(
                                     'Configure the number of overwrite passes for secure data deletion.',
@@ -209,14 +190,14 @@ class _DashboardPageState extends State<DashboardPage> {
                                         value: _selectedPasses,
                                         isExpanded: true,
                                         items: _passesOptions.map((p) {
-                                          return DropdownMenuItem(value: p, child: Text(p, style: GoogleFonts.inter(fontWeight: FontWeight.w600)));
+                                          return DropdownMenuItem(value: p, child: Text(p, style: GoogleFonts.inter(fontWeight: FontWeight.w600,color: Colors.black)));
                                         }).toList(),
                                         onChanged: (v) {
                                           if (v == null) return;
                                           setState(() => _selectedPasses = v);
                                         },
                                         icon: const Icon(Icons.expand_more, color: Colors.black54),
-                                        dropdownColor: Colors.white,
+                                        dropdownColor: Colors.black,
                                       ),
                                     ),
                                   ),
@@ -271,9 +252,9 @@ class _DashboardPageState extends State<DashboardPage> {
                             child: Text.rich(
                               TextSpan(
                                 text: 'Security level: ',
-                                style: GoogleFonts.inter(fontSize: 14),
+                                style: GoogleFonts.inter(fontSize: 14,color: Colors.black),
                                 children: [
-                                  TextSpan(text: 'High', style: GoogleFonts.inter(fontWeight: FontWeight.w700, color: primary900)),
+                                  TextSpan(text: 'High', style: GoogleFonts.inter(fontWeight: FontWeight.w700, color: Colors.red)),
                                 ],
                               ),
                             ),
